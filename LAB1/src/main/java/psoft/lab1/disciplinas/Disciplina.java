@@ -1,4 +1,4 @@
-package psoft.lab1.LAB1.disciplinas;
+package psoft.lab1.disciplinas;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
