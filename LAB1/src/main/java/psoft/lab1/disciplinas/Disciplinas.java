@@ -2,22 +2,16 @@ package psoft.lab1.disciplinas;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
-public class Disciplina {
+public class Disciplinas {
 	private String nome;
-	private int id;
+	private int id = 0;
 	private double nota;
-
-	@JsonCreator
-	public Disciplina(String nome, double nota) {
-		this.nome = nome;
-		this.nota = nota;
-	}
 	
-	@JsonCreator
-	public Disciplina(String nome, int id, double nota){
+	
+	public Disciplinas(String nome, double nota) {
 		this.nome = nome;
-		this.id = id;
-		this.nota = nota;		
+		this.id = id++;
+		this.nota = nota;
 	}
 
 	public void setNome(String nome) {
@@ -28,18 +22,11 @@ public class Disciplina {
 		this.nota = nota;
 	}
 
-	public String getNome() {
-		return nome;
-	}
-
-	public double getNota() {
-		return nota;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + id;
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(nota);
@@ -55,7 +42,9 @@ public class Disciplina {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Disciplina other = (Disciplina) obj;
+		Disciplinas other = (Disciplinas) obj;
+		if (id != other.id)
+			return false;
 		if (nome == null) {
 			if (other.nome != null)
 				return false;
