@@ -1,23 +1,25 @@
 package psoft.lab1.service;
 
-import java.util.ArrayList;
-
+import java.util.HashMap;
 import org.springframework.stereotype.Service;
 
-
 import psoft.lab1.disciplinas.Disciplinas;
+import psoft.lab1.disciplinas.Disciplina;
 
 @Service
 public class DisciplinaService {
-	private ArrayList<Disciplinas> listDisciplinas = new ArrayList<>();
+	Disciplina disciplina1 = new Disciplina("", 0);
 	
-	public Disciplinas addDisciplina(String nome, double nota) {
-		Disciplinas d = new Disciplinas(nome, nota);
-		listDisciplinas.add(d);
-		return d;
-		
-				
+	public HashMap<Integer, Disciplina> mapaDisciplina = new HashMap<>();
+	
+	public Disciplina addDisciplina(Disciplina disciplina) {
+		this.disciplina1 = disciplina;
+		return disciplina1;				
 	}
 
+	public Disciplina getDisciplinas() {
+		
+		return null;
+	}
 
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import psoft.lab1.service.DisciplinaService;
 import psoft.lab1.disciplinas.Disciplina;
-import psoft.lab1.disciplinas.Disciplinas;
+
 
 @RestController
 public class DisciplinaController {
@@ -21,7 +21,10 @@ public class DisciplinaController {
 	
 	@PostMapping("/v1/disciplinas")
 	public ResponseEntity<Disciplina> addDisciplina(@RequestBody Disciplina newDisciplina){
-		return null;
+		return new ResponseEntity<Disciplina>(disciplinaService.addDisciplina(newDisciplina), HttpStatus.OK);
 	}
-	
+	@RequestMapping
+	public ResponseEntity<Disciplina> getDisciplina(){
+		return new ResponseEntity<Disciplina>(disciplinaService.getDisciplinas(), HttpStatus.OK);
+	}
 }
