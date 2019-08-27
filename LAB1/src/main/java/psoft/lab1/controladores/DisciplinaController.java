@@ -44,7 +44,7 @@ public class DisciplinaController {
 	
 	@PutMapping("/v1/disciplinas/{id}/nota")
 	public ResponseEntity<Disciplina> setNotaDisciplina(@PathVariable int id, @RequestBody Disciplina nota){
-		return new ResponseEntity<Disciplina>(disciplinaService.setNotaDisciplina(nota), HttpStatus.OK);
+		return new ResponseEntity<Disciplina>(disciplinaService.setNotaDisciplina(id, nota), HttpStatus.OK);
 	}
 	@DeleteMapping("/v1/disciplinas/{id}")
 	public ResponseEntity<Disciplina> deleteDisciplina(@PathVariable int id){

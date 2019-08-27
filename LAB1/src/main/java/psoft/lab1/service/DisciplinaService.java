@@ -2,6 +2,7 @@ package psoft.lab1.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import org.springframework.stereotype.Service;
 
@@ -39,24 +40,35 @@ public class DisciplinaService {
 
 	public Disciplina setNomeDisciplina(int id, Disciplina nome) {
 		Disciplina disciplina = this.mapaDisciplinas.get(id);
-		this.disciplina1 = disciplina;
+		this.disciplina1 = nome;
 		disciplina.setNome(disciplina1.getNome());
 		return disciplina;
 	}
 
-	public Disciplina setNotaDisciplina(Disciplina nota) {
-		
-		return null;
+	public Disciplina setNotaDisciplina(int id, Disciplina nota) {
+		Disciplina disciplina = this.mapaDisciplinas.get(id);
+		this.disciplina1 = nota;
+		disciplina.setNota(disciplina1.getNota());
+		return disciplina;		
+
 	}
 
 	public Disciplina deleteDisciplina(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Disciplina disciplina = this.mapaDisciplinas.remove(id);	
+		return disciplina;
 	}
 
-	public Disciplina getDisciplinasRanking() {
-		// TODO Auto-generated method stub
-		return null;
+	public Disciplinas getDisciplinasRanking() {
+		Collection<Disciplina> disciplinas = this.mapaDisciplinas.values();
+		ArrayList<Disciplina> lista1 = new ArrayList<Disciplina>();
+		for (Disciplina d : disciplinas) {
+			lista1.add(d);
+		}
+		Collections.sort(lista1, new DisciplinaComparator());
+		Disciplinas disciplinas3 = new Disciplinas();
+		disciplinas3.setListDisciplinas(lista1);
+		return disciplinas3;
+
 	}
 
 }
