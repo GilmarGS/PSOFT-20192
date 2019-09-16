@@ -1,4 +1,4 @@
-package lab2.psoft.LAB2;
+package lab2.psoft;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
