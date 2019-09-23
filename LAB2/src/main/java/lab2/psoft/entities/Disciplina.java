@@ -1,6 +1,11 @@
-package lab2.psoft.entities;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
 public class Disciplina {
+	@Id
+	@GeneratedValue
 	private long id;
 	private String nome;
 	private double nota;
@@ -14,7 +19,11 @@ public class Disciplina {
 		this.comentarios = comentarios;
 		this.likes = likes;
 	}
-
+	
+	public Disciplina() {
+		super();
+	}
+	
 	public long getId() {
 		return id;
 	}
