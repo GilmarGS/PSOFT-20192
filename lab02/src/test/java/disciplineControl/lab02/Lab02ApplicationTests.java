@@ -1,4 +1,4 @@
-package lab2.psoft.LAB2;
+package disciplineControl.lab02;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Lab2ApplicationTests {
+public class Lab02ApplicationTests {
 
 	@Test
 	public void contextLoads() {

@@ -1,16 +1,24 @@
+package lab2.psoft.entities;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Disciplina {
-	@Id
-	@GeneratedValue
-	private long id;
+public class Disciplina implements Comparable<Disciplina> {
+
 	private String nome;
 	private double nota;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 	private String comentarios;
 	private int likes;
+
+	public Disciplina() {
+		super();
+	}
 	
 	public Disciplina(long id, String nome, double nota, String comentarios, int likes) {
 		this.id = id;
@@ -20,18 +28,6 @@ public class Disciplina {
 		this.likes = likes;
 	}
 	
-	public Disciplina() {
-		super();
-	}
-	
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -46,6 +42,18 @@ public class Disciplina {
 
 	public void setNota(double nota) {
 		this.nota = nota;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getComentarios() {
@@ -68,13 +76,7 @@ public class Disciplina {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((comentarios == null) ? 0 : comentarios.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
-		result = prime * result + likes;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(nota);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 
@@ -87,23 +89,19 @@ public class Disciplina {
 		if (getClass() != obj.getClass())
 			return false;
 		Disciplina other = (Disciplina) obj;
-		if (comentarios == null) {
-			if (other.comentarios != null)
-				return false;
-		} else if (!comentarios.equals(other.comentarios))
-			return false;
 		if (id != other.id)
-			return false;
-		if (likes != other.likes)
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		if (Double.doubleToLongBits(nota) != Double.doubleToLongBits(other.nota))
 			return false;
 		return true;
 	}
-	
+
+	@Override
+	public int compareTo(Disciplina d) {
+		if (this.getNota() > d.getNota()) {
+			return -1;
+		} else if (this.getNota() < d.getNota()) {
+			return 1;
+		}
+		return 0;
+	}
+
 }
