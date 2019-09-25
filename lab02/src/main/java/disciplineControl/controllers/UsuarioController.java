@@ -1,6 +1,4 @@
-package lab2.psoft.controllers;
-
-import java.util.List;
+package disciplineControl.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lab2.psoft.entities.Usuario;
-import lab2.psoft.services.JwtService;
-import lab2.psoft.services.UsuarioService;
+import disciplineControl.entities.Usuario;
+import disciplineControl.services.JwtService;
+import disciplineControl.services.UsuarioService;
 
 @RestController
 public class UsuarioController {
@@ -55,8 +53,5 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> getUsuarioById(@PathVariable String email) {
 		return new ResponseEntity<Usuario>(usuarioService.getUsuarioById(email).get(), HttpStatus.OK);
 	}
-	@RequestMapping("/usuarios")
-	public ResponseEntity<List<Usuario>> getUsuarios(){
-		return new ResponseEntity<>(usuarioService.getUsuarios(), HttpStatus.OK);
-	}
+
 }

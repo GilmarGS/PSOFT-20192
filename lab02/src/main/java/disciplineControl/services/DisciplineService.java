@@ -1,4 +1,4 @@
-package lab2.psoft.services;
+package disciplineControl.services;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,8 +15,8 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import lab2.psoft.entities.Disciplina;
-import lab2.psoft.repository.DisciplinaRepository;
+import disciplineControl.entities.Disciplina;
+import disciplineControl.repository.DisciplinaRepository;
 
 @Service
 public class DisciplineService {

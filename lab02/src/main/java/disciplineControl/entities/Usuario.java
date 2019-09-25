@@ -1,4 +1,4 @@
-package lab2.psoft.entities;
+package disciplineControl.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

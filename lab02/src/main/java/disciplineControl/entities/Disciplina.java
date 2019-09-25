@@ -1,4 +1,4 @@
-package lab2.psoft.entities;
+package disciplineControl.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,18 +16,30 @@ public class Disciplina implements Comparable<Disciplina> {
 	private String comentarios;
 	private int likes;
 
-	public Disciplina() {
+	public Disciplina(String nome, float nota) {
 		super();
-	}
-	
-	public Disciplina(long id, String nome, double nota, String comentarios, int likes) {
-		this.id = id;
 		this.nome = nome;
 		this.nota = nota;
+	}
+
+	public Disciplina(String nome) {
+		super();
+		this.nome = nome;
+	}
+
+	public Disciplina(String nome, double nota, long id, String comentarios, int likes) {
+		super();
+		this.nome = nome;
+		this.nota = nota;
+		this.id = id;
 		this.comentarios = comentarios;
 		this.likes = likes;
 	}
-	
+
+	public Disciplina() {
+		super();
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -102,6 +114,11 @@ public class Disciplina implements Comparable<Disciplina> {
 			return 1;
 		}
 		return 0;
+	}
+
+	@Override
+	public String toString() {
+		return "Disciplina [nome=" + nome + ", id=" + id + "]";
 	}
 
 }

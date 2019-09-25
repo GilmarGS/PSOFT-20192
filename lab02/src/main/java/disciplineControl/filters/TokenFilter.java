@@ -1,4 +1,4 @@
-package lab2.psoft.filters;
+package disciplineControl.filters;
 
 import java.io.IOException;
 

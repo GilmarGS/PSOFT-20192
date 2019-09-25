@@ -1,4 +1,4 @@
-package lab2.psoft.controllers;
+package disciplineControl.controllers;
 
 import java.util.Optional;
 
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lab2.psoft.entities.Usuario;
-import lab2.psoft.services.JwtService;
-import lab2.psoft.services.UsuarioService;
+import disciplineControl.entities.Usuario;
+import disciplineControl.services.JwtService;
+import disciplineControl.services.UsuarioService;
 
 @RestController
 @RequestMapping("/auth")

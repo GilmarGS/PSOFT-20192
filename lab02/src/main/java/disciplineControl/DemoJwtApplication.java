@@ -1,13 +1,11 @@
-package lab2.psoft;
-
-
+package disciplineControl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
-import lab2.psoft.filters.TokenFilter;
+import disciplineControl.filters.TokenFilter;
 
 @SpringBootApplication
 public class DemoJwtApplication {

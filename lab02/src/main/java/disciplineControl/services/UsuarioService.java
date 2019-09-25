@@ -1,12 +1,12 @@
-package lab2.psoft.services;
+package disciplineControl.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import lab2.psoft.entities.Usuario;
-import lab2.psoft.repository.UsuarioRepository;
+import disciplineControl.entities.Usuario;
+import disciplineControl.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {

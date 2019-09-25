@@ -1,9 +1,9 @@
-package lab2.psoft.controllers;
+package disciplineControl.controllers;
 
 import java.util.List;
 import java.util.Optional;
 
-
+import javax.servlet.ServletException;
 import javax.transaction.Transactional;
 
 import org.springframework.http.HttpStatus;
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import lab2.psoft.entities.Disciplina;
-import lab2.psoft.entities.Usuario;
-import lab2.psoft.services.DisciplineService;
+import disciplineControl.entities.Disciplina;
+import disciplineControl.entities.Usuario;
+import disciplineControl.services.DisciplineService;
 
 @RestController
 public class DisciplineController {

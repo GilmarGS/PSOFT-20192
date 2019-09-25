@@ -1,4 +1,4 @@
-package lab2.psoft.services;
+package disciplineControl.services;
 
 import java.util.Date;
 import java.util.Optional;
@@ -7,11 +7,11 @@ import javax.servlet.ServletException;
 
 import org.springframework.stereotype.Service;
 
+import disciplineControl.entities.Usuario;
+import disciplineControl.filters.TokenFilter;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
-import lab2.psoft.entities.Usuario;
-import lab2.psoft.filters.TokenFilter;
 
 @Service
 public class JwtService {
